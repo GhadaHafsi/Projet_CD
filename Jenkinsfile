@@ -10,17 +10,22 @@ pipeline {
 			}
 }
     
-    stage('build'){
-      steps {
-
-          script{
-
-          sh "ansible-playbook -vvv ansible/docker.yml -i ansible/inventory/host.yml"
-          }
-
-
-    }
-  }
+    stage('build')
+         {
+             steps{
+                 script{
+                     sh "ansible-playbook Ansible/build.yml -i ansible/inventory/host.yml -e ansible_become_password=ghalinour"
+                 }
+             }
+         }
+         
+         stage('docker'){
+            steps{
+                script{
+                    sh "ansible-playbook Ansible/docker.yml -i ansible/inventory/host.yml -e ansible_become_password=ghalinour"
+                }
+            }
+        }
 
   }
 }

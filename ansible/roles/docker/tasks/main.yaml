@@ -1,6 +1,4 @@
----
-
-  #taks for docker
+#taks for docker
   - name : create image docker
     docker_image :
       name : devops
@@ -17,4 +15,4 @@
       state : started
       recreate : true
       ports :
-        - "4200:80"
+        - "4200"

@@ -15,7 +15,7 @@ pipeline {
 
           script{
 
-          sh "ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml -e ansible_become_password=ghalinour"
+          sh "ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml"
           }
 
 

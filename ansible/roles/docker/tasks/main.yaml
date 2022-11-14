@@ -1,4 +1,6 @@
-#taks for docker
+---
+
+#taks for docke
 - name : create image docker
   docker_image :
     name : devops

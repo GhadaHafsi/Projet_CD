@@ -14,7 +14,7 @@ pipeline {
          {
              steps{
                  script{
-                     sh "ansible-playbook Ansible/build.yml -i ansible/inventory/host.yml -e ansible_become_password=ghalinour"
+                     sh "ansible-playbook ansible/build.yml -i ansible/inventory/host.yml -e ansible_become_password=ghalinour"
                  }
              }
          }
@@ -22,7 +22,7 @@ pipeline {
          stage('docker'){
             steps{
                 script{
-                    sh "ansible-playbook Ansible/docker.yml -i ansible/inventory/host.yml -e ansible_become_password=ghalinour"
+                    sh "ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml -e ansible_become_password=ghalinour"
                 }
             }
         }

@@ -1,19 +1,18 @@
 ---
-
-#taks for docke
+# tasks file for docker
 - name: create image docker
   docker_image:
-    name: devops
+    name: ghadahafsi/devops
     build:
       path: /var/lib/jenkins/workspace/Projet_CD
       pull: no
     source: build
     state: present
-    force_source : true
-- name: run container docker
+    force_source: true
+- name: run container docker 
   docker_container:
     name: myapp_container
-    image: devops:latest
+    image: ghadahafsi/devops:latest
     state: started
     recreate: true
     ports:
